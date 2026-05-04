@@ -6,19 +6,19 @@ The idea is to simulate technical devices that send telemetry data to a backend.
 
 ## Main components
 
-Device Simulator
+**Device Simulator**
 
 A small Python program that generates simulated device data. The data should look like it could come from an industrial or edge device, for example temperature, voltage, battery level, machine state or error codes.
 
-Backend
+**Backend**
 
 A Spring Boot service that receives telemetry events, validates them and stores them in PostgreSQL. It also exposes simple API endpoints for reading the latest data and checking the system state.
 
-PostgreSQL
+**PostgreSQL**
 
 The database stores devices and telemetry events. The first version keeps the schema small and focuses on making ingestion and retrieval work reliably.
 
-Local Infrastructure
+**Local Infrastructure**
 
 The project should run locally with Docker Compose. The goal is that another person can clone the repository and start the system with a few commands.
 
