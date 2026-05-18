@@ -27,3 +27,9 @@ This document tracks the major technical decisions, rationale, and trade-offs ma
 * **Context:** The local PostgreSQL container requires initialization credentials (user, password, database name) to start properly.
 * **Decision:** Hardcode fallback development-only credentials (`devuser`/`devpassword`) directly inside `docker-compose.yml`.
 * **Rationale:** This choice prioritizes a frictionless onboarding workflow, allowing anyone to run the full stack locally with a single command. Since this configuration is strictly isolated for local testing and contains no production or sensitive data, the security risk is negligible. Production environments will strictly override these values using environment variables or a dedicated secret manager, ensuring no real production secrets are ever committed to the repository.
+
+### 5. Database Interaction (Spring Data JPA vs Raw SQL)
+* **Date:** 2026-05-18
+* **Context:** The Spring Boot backend needs to persist telemetry events into PostgreSQL securely and efficiently.
+* **Decision:** Use Spring Data JPA (backed by Hibernate) instead of writing raw SQL queries.
+* **Rationale:** Leveraging an ORM (Object-Relational Mapper) drastically reduces boilerplate code and automatically handles schema updates (`ddl-auto=update`) during this early development phase. Furthermore, Hibernate automatically uses Prepared Statements under the hood, inherently protecting the database layer against SQL Injection attacks without requiring manual string escaping.
