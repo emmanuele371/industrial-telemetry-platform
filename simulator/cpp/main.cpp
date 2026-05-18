@@ -11,5 +11,11 @@ int main () {
 					    
 	// Print the JSON on the stout
 	std::cout << "{\n";
-	std::cout << "";
+    std::cout << "  \"device_id\": \"device-001\",\n";
+    std::cout << "  \"temperature_c\": " << temp << ",\n";
+    std::cout << "  \"voltage_v\": " << voltage << ",\n";
+    std::cout << "  \"battery_percent\": " << battery << ",\n";
+    std::cout << "  \"machine_state\": \"RUNNING\",\n";
+    std::cout << "  \"error_code\": null\n";
+    std::cout << "}\n";
 }
