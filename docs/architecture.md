@@ -8,7 +8,7 @@ The idea is to simulate technical devices that send telemetry data to a backend.
 
 **Device Simulator**
 
-A small Python program that generates simulated device data. The data should look like it could come from an industrial or edge device, for example temperature, voltage, battery level, machine state or error codes.
+A small C++ simulator that generates telemetry events similar to what an industrial or edge device could send, for example temperature, voltage, battery level, machine state or error codes. The first version is intentionally simple: it generates JSON data locally. Later, the generated events can be sent to the backend through a small shell script or directly through HTTP/MQTT.
 
 **Backend**
 
