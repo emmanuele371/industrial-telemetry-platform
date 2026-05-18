@@ -4,7 +4,5 @@
 target/
 build/
 out/
-__pycache__/
-*.pyc
 .idea/
 .vscode/
