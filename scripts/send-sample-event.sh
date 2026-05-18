@@ -12,3 +12,8 @@ JSON_PAYLOAD=$(./device-simulator)
 echo "Generated JSON event payload:"
 echo "$JSON_PAYLOAD"
 echo "---------------------------------"
+echo "Sending event to the backend API via HTTP POST..."
+curl -X POST http://localhost:8080/api/telemetry \
+     -H "Content-Type: application/json" \
+     -d "$JSON_PAYLOAD"
+echo -e "\n---------------------------------"
